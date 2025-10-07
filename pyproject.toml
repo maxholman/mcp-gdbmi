@@ -3,10 +3,6 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mcp-gdbserver"
+name = "mcp-gdbmi"
 version = "0.1.0"
-dependencies = [
-    "fastmcp",
-    "pygdbmi",
-    "json5",
-]
+dependencies = ["fastmcp", "pygdbmi", "json5"]

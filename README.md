@@ -1,14 +1,14 @@
-# GDB MCP Server
+# MCP server for GDB/MI
 
-An MCP server for interacting with GDB via `gdbserver`.
+An MCP server for interacting with GDB/MI (GDB Machine Interface).
 
-Output from `gdbserver` is "compressed" by using json5 to reduce the token count
-for data structures. Hex values are also "compressed" by stripping out long
+Output from GDB/MI is "compressed" using json5 to reduce the token count for
+data structures. Hex values are also "compressed" by stripping out long
 `0x00000000000` prefixes ie `0x0000004` becomes `0x4`
 
-> [!CAUTION]
-> This tool can and will destroy your quota VERY quickly if you are
-> not careful with what you ask for! You have been warned.
+> [!CAUTION] GDB/MI can be very verbose, and this tool will destroy your
+> quota VERY quickly if you are not careful with what you ask for! You have been
+> warned.
 
 ## Installation
 
@@ -64,7 +64,7 @@ Ask Claude/Gemini to:
 
 ### `connect(target: str)`
 
-Connect to a gdbserver instance (e.g., `"localhost:1234"`).
+Connect to GDB, which connects to the target (e.g., `"localhost:1234"` for a gdbserver instance).
 
 ### `disconnect()`
 
