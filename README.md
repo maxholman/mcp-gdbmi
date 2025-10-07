@@ -6,7 +6,8 @@ Output from `gdbserver` is "compressed" by using json5 to reduce the token count
 for data structures. Hex values are also "compressed" by stripping out long
 `0x00000000000` prefixes ie `0x0000004` becomes `0x4`
 
-> [!WARNING] This tool can and will destroy your quota VERY quickly if you are
+> [!CAUTION]
+> This tool can and will destroy your quota VERY quickly if you are
 > not careful with what you ask for! You have been warned.
 
 ## Installation
