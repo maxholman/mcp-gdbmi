@@ -6,7 +6,8 @@ Output from GDB/MI is "compressed" using json5 to reduce the token count for
 data structures. Hex values are also "compressed" by stripping out long
 `0x00000000000` prefixes ie `0x0000004` becomes `0x4`
 
-> [!CAUTION] GDB/MI can be very verbose, and this tool will destroy your
+> [!CAUTION]
+> GDB/MI can be very verbose, and this tool will destroy your
 > quota VERY quickly if you are not careful with what you ask for! You have been
 > warned.
 
