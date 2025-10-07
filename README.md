@@ -30,7 +30,6 @@ fastmcp install gemini-cli gdb_mcp.py
 Start your program with gdbserver:
 
 ```bash
-gcc -g -o program program.c
 gdbserver localhost:1234 ./program
 ```
 
@@ -72,4 +71,4 @@ See [GDB/MI docs](https://sourceware.org/gdb/onlinedocs/gdb/GDB_002fMI.html) for
 
 ## License
 
-MIT
+[MIT](LICENSE.md)
