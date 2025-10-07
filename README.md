@@ -1,6 +1,13 @@
 # GDB MCP Server
 
-An MCP server for interacting with GDB via gdbserver.
+An MCP server for interacting with GDB via `gdbserver`.
+
+Output from `gdbserver` is "compressed" but using json5 to reduce the token
+count for data structures, and hex values are also "compressed" by stripping out
+any long `0x00000000000` prefixes ie `0x0000004` becomes `0x4`
+
+> [! WARNING] This tool can destroy your quota VERY quickly if you are not
+> careful
 
 ## Installation
 
@@ -15,11 +22,20 @@ pip install .
 ### Claude CLI
 
 ```bash
+# run the mcp server
 fastmcp run gdb_mcp.py:mcp --transport http --port 3333
+
+# add it to claude
 claude mcp add --transport http gdb http://localhost:3333
 ```
 
 ### Gemini CLI
+
+[Gemini CLI 🤝
+FastMCP](https://developers.googleblog.com/en/gemini-cli-fastmcp-simplifying-mcp-server-development/)
+
+This command simplifies the process and makes the server capabilities instantly
+available and configured within Gemini CLI.
 
 ```bash
 fastmcp install gemini-cli gdb_mcp.py
@@ -35,13 +51,13 @@ gdbserver localhost:1234 ./program
 
 Then use the tools through your MCP client:
 
-```bash
-# Ask Claude/Gemini to:
-# - Set breakpoints
-# - Run the program
-# - Step through code
-# - Analyse registers
-```
+Ask Claude/Gemini to:
+
+- Set breakpoints
+- Run the program
+- Step through code
+- Analyse registers
+- Anything that is possible via the GDB machine interface
 
 ## Tools
 
@@ -67,7 +83,8 @@ Execute a GDB/MI command (e.g., `"-break-insert main"`, `"-exec-run"`).
 - `-stack-list-frames` - Show stack frames
 - `-data-evaluate-expression EXPR` - Evaluate expression
 
-See [GDB/MI docs](https://sourceware.org/gdb/onlinedocs/gdb/GDB_002fMI.html) for more.
+See [GDB/MI docs](https://sourceware.org/gdb/onlinedocs/gdb/GDB_002fMI.html) for
+more.
 
 ## License
 
