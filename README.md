@@ -2,7 +2,7 @@
 
 An MCP server for interacting with GDB/MI (GDB Machine Interface).
 
-Output from GDB/MI is "compressed" using json5 to reduce the token count for
+Output from GDB/MI is "compressed" using `json5` to reduce the token count for
 data structures. Hex values are also "compressed" by stripping out long
 `0x00000000000` prefixes ie `0x0000004` becomes `0x4`
 
