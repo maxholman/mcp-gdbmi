@@ -28,10 +28,10 @@ pip install .
 fastmcp run gdb_mcp.py:mcp --transport http --port 3333
 
 # add it to claude
-claude mcp add --transport http gdb http://localhost:3333
+claude mcp add --transport http gdb http://localhost:3333/mcp
 ```
 
-### Gemini CLI
+### Gemini CLI (FastMCP and uv)
 
 [Gemini CLI 🤝
 FastMCP](https://developers.googleblog.com/en/gemini-cli-fastmcp-simplifying-mcp-server-development/)
@@ -43,9 +43,25 @@ available and configured within Gemini CLI.
 fastmcp install gemini-cli gdb_mcp.py
 ```
 
+### Gemini CLI (Manual)
+
+```
+{
+  "mcpServers": {
+    "GDB MCP Server": {
+      "command": "fastmcp",
+      "args": [
+        "run",
+        "/absolute/path/to//mcp-gdbmi/gdb_mcp.py:mcp"
+      ]
+    }
+  }
+}
+```
+
 ## Usage
 
-Start your program with gdbserver:
+Start your program with `gdbserver`:
 
 ```bash
 gdbserver localhost:1234 ./program
