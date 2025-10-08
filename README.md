@@ -52,7 +52,7 @@ fastmcp install gemini-cli gdb_mcp.py
       "command": "fastmcp",
       "args": [
         "run",
-        "/absolute/path/to//mcp-gdbmi/gdb_mcp.py:mcp"
+        "/absolute/path/to/mcp-gdbmi/gdb_mcp.py:mcp"
       ]
     }
   }
