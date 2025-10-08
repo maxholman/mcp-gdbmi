@@ -1,8 +1,14 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "mcp-gdbmi"
 version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.11"
 dependencies = ["fastmcp", "pygdbmi", "json5"]
+
+[project.urls]
+Homepage = "https://github.com/maxholman/mcp-gdbmi"
+Repository = "https://github.com/maxholman/mcp-gdbmi"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
