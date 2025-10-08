@@ -169,7 +169,7 @@ def command(command: str, wait_for_done: bool = True):
 
 
 def main():
-    """Entry point for the mcp-gdbserver command."""
+    """Entry point for the mcp-gdbmi command."""
     mcp.run()
 
 
